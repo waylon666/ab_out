@@ -1,0 +1,28 @@
+module ab_out(clk,a,b);
+
+input clk;
+output a;
+output b;
+
+reg[15:0] cnt;
+
+
+always @(posedge clk)
+
+if cnt == 16'd0
+   a<=1;
+   b<=0;
+if cnt == 16'd4
+   a<=1;
+	b<=1;
+if cnt == 16'd8
+   a<=0;
+	b<=1;
+if cnt == 16'd12
+   a<=0;
+	b<=0;
+if cnt == 16'd16
+   a<=1;
+   b<=0;
+	cnt<=0;
+endmodule
